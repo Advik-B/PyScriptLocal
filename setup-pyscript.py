@@ -13,16 +13,12 @@ from subprocess import run
 from zipfile import ZipFile
 import textwrap
 from sys import exit
+
 # from gh_token import GITHUB_TOKEN
 
 base_url = "https://pyscript.net/latest/"
 base_name = "pyscript"
-extentions = (
-    ".py",
-    ".css",
-    ".js",
-    ".js.map"
-)
+extentions = (".py", ".css", ".js", ".js.map")
 
 pyodide_repo_name = "pyodide/pyodide"
 
@@ -33,7 +29,6 @@ if isfile(".env"):
             for k, v in [line.split("=") for line in open(".env").read().splitlines()]
         }
     )
-
 
 
 if environ.get("GITHUB_TOKEN"):

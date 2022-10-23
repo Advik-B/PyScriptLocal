@@ -1,4 +1,4 @@
-# PyScriptLocal
+# PyScript Local
 An app to help in setting up pyscript locally
 
 ## How it works

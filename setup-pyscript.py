@@ -20,9 +20,9 @@ extentions = (
     ".py",
     ".css",
     ".js",
+    ".js.map"
 )
 
-mapped_extentions = (".js.map",)
 pyodide_repo_name = "pyodide/pyodide"
 
 if isfile(".env"):
@@ -33,8 +33,15 @@ if isfile(".env"):
         }
     )
 
+
+
 if environ.get("GITHUB_TOKEN"):
     g = Github(environ["GITHUB_TOKEN"])
+
+elif "GITHUB_TOKEN" in __dir__():
+    g = Github(GITHUB_TOKEN)
+
+
 else:
     print(
         "No GITHUB_TOKEN found in .env file or environment\n"
@@ -114,11 +121,6 @@ if __name__ == "__main__":
     mkdir("PyScript")
     print("Downloading PyScript files...")
     for ext in extentions:
-        download_file(
-            base_url + base_name + ext,
-            pjoin("PyScript", base_name + ext),
-        )
-    for ext in mapped_extentions:
         download_file(
             base_url + base_name + ext,
             pjoin("PyScript", base_name + ext),

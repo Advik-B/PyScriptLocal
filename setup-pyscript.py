@@ -13,6 +13,7 @@ from subprocess import run
 from zipfile import ZipFile
 import textwrap
 from sys import exit
+# from gh_token import GITHUB_TOKEN
 
 base_url = "https://pyscript.net/latest/"
 base_name = "pyscript"
@@ -38,9 +39,8 @@ if isfile(".env"):
 if environ.get("GITHUB_TOKEN"):
     g = Github(environ["GITHUB_TOKEN"])
 
-elif "GITHUB_TOKEN" in __dir__():
+elif "GITHUB_TOKEN" in dir():
     g = Github(GITHUB_TOKEN)
-
 
 else:
     print(

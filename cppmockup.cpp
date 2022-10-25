@@ -25,4 +25,3 @@ int main() {
     print(text);
     return 0;
 }
-

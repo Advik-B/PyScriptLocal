@@ -20,7 +20,8 @@ void print_vector(const vector<string> &v, bool flush = false, bool newline = tr
     }
 }
 
-int main() {
+int main()
+{
     string text {"A long time ago in a galaxy far, far away..."};
     print(text);
     return 0;

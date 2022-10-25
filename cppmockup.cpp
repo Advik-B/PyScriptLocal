@@ -39,8 +39,7 @@ vector<string> read_text_file(const string &filename) {
 int main()
 {
     // Read the bee movie script
-    vector<string> lines = read_text_file("bee_movie_script.txt");
+    vector<string> lines = read_text_file("bee-movie-script.txt");
     print_vector(lines);
-    print("Done", true);
     return 0;
 }

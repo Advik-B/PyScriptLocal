@@ -3,5 +3,6 @@
         "*.py": "python",
         ".env": "plaintext",
         "iosfwd": "cpp"
-    }
+    },
+    "python.analysis.typeCheckingMode": "basic"
 }

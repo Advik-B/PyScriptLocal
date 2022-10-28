@@ -46,7 +46,7 @@ else:
     try:
         g = Github(input("Please enter your github token: "))
     except KeyboardInterrupt:
-        print("Canceled by user")
+        print("\nCanceled by user")
         exit(1)
 
 
@@ -65,7 +65,7 @@ def rm(path: str) -> None:
         rm_(path)
 
 
-def get_pyodide_info() -> dict:
+def get_pyodide_info():
     repo = g.get_repo(pyodide_repo_name)
     release = repo.get_latest_release()
     releases = release.get_assets().get_page(page=0)

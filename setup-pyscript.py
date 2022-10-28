@@ -65,7 +65,7 @@ def rm(path: str) -> None:
         rm_(path)
 
 
-def get_pyodide_info():
+def get_pyodide_info() -> dict[str, str, int, str]:
     repo = g.get_repo(pyodide_repo_name)
     release = repo.get_latest_release()
     releases = release.get_assets().get_page(page=0)
@@ -111,6 +111,8 @@ def add_to_path(path: str) -> None:
 
 if __name__ == "__main__":
     chunk_size = 1024
+    # for key, value in get_pyodide_info().items():
+    #     print(f"{key}: {value} ({type(value).__name__})")
     if p_exists("pyscript"):
         rm("pyscript")
     mkdir("PyScript")
